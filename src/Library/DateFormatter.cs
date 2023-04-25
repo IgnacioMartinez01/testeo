@@ -15,6 +15,38 @@ public class DateFormatter
     /// <returns>La fecha convertida al formato "yyyy-mm-dd".</returns>
     public static string ChangeFormat(string date)
     {
+        if (!metodolenght(date))
+        {
+            return ("Fecha invalida");
+        }
+        if (!fechaenblanco(date))
+        {
+            return ("Fecha invalida");
+        }
+        if (!formatodistinto(date))
+        {
+            return ("Fecha invalida");
+        }
+
+
         return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
     }
+    public static bool metodolenght(string date)
+    {
+        return date.Length == 10;
+    }
+    public static bool fechaenblanco(string date)
+    {
+        
+        
+        return (date=="");
+        
+        
+        
+
+    }
+    public static bool formatodistinto(string date)
+    {
+        return date[2]!='/'  ||  date[5]!='/';
+    }               
 }
